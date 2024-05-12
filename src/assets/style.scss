@@ -1,0 +1,58 @@
+$variables: (
+  clr-white: #ffffffff,
+  clr-black: #232323,
+  clr-grey-light: #f9fafb,
+  clr-grey: #d2d6db,
+  clr-grey-dark: #525252,
+
+  fsize-sm: clamp(0.875rem, 1.5vw, 1rem),
+  fsize-reg: clamp(1rem, 1vw, 1.2rem),
+  fsize-lg: clamp(1.25rem, 1.5vw, 1.5rem),
+
+  line-height-sm: 1.25rem,
+  line-height-reg: 1.5rem,
+  line-height-lg: 1.75rem,
+);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-smooth: antialiased;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  @each $key, $value in $variables {
+    --#{$key}: #{$value};
+  }
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Noto Sans",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+
+  background: linear-gradient(
+    to bottom right,
+    var(--clr-grey-light) 0%,
+    var(--clr-grey) 100%
+  );
+
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
